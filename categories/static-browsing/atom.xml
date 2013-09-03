@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Static Browsing | Daniel's Programming World]]></title>
   <link href="http://sharejoy.github.io/categories/static-browsing/atom.xml" rel="self"/>
   <link href="http://sharejoy.github.io/"/>
-  <updated>2013-09-04T05:22:43+09:00</updated>
+  <updated>2013-09-04T05:52:34+09:00</updated>
   <id>http://sharejoy.github.io/</id>
   <author>
     <name><![CDATA[sharejoy]]></name>
@@ -14,11 +14,17 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress? ??? ??? Blogging]]></title>
+    <title type="html"><![CDATA[Octopress를 이용한 첫번째 Blogging]]></title>
     <link href="http://sharejoy.github.io/2013/09/03/new-blog-with-octopress/"/>
     <updated>2013-09-03T23:30:00+09:00</updated>
     <id>http://sharejoy.github.io/2013/09/03/new-blog-with-octopress</id>
-    <content type="html"><![CDATA[<p>???? Octopress ? Ruby? ???? Blogging? ?????. Database? ????, ?? Web Server? ??? ??? ??? ?? ???? Markdown?? ??? ???? ????? ?????? ??? ?? ?? ???? ??? DB?? ??? ???? ? ? ??? ????. ??? ??? Disqus? ?????.</p>
+    <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a>는 <a href="https://www.ruby-lang.org/en/">Ruby</a>를 기반으로한 <a href="http://jekyllrb.com/">Jekyll</a> 을 이용해서 정적 블로그 사이트(Static site)를 만들어주는 툴입니다.</p>
+
+<p>로컬에서 모든 사이트를 html와 이미지로 다 생성을 한 다음에, 그걸 웹서버에 올리기만 하면 블로그가 생성된다.</p>
+
+<p>Database도 필요없고, 단지 웹서버(혹은 호스팅, 무료로는 GitHub도 가능)만 있으면 블로그를 운영할 수 있다. 코멘트 기능은 Disqus를 이용하는 것이 기본으로 되어 있다.</p>
+
+<p>아무튼 이제 Octopress를 이용해서 블로깅을 시작하기로 했다!!!</p>
 ]]></content>
   </entry>
   
