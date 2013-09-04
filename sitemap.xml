@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://sharejoy.github.io/2013/09/03/new-blog-with-octopress/</loc>
+        <loc>http://blog.psysw.com//2013/09/03/new-blog-with-octopress/</loc>
         <lastmod>2013-09-04T05:51:06+09:00</lastmod>
     </url>
     <url>
-        <loc>http://sharejoy.github.io/about/</loc>
+        <loc>http://blog.psysw.com//about/</loc>
         <lastmod>2013-09-04T04:22:49+09:00</lastmod>
     </url>
     <url>
-        <loc>http://sharejoy.github.io/archives/</loc>
+        <loc>http://blog.psysw.com//archives/</loc>
         <lastmod>2013-09-04T05:51:06+09:00</lastmod>
     </url>
     <url>
-        <loc>http://sharejoy.github.io/blog/archives/</loc>
+        <loc>http://blog.psysw.com//blog/archives/</loc>
         <lastmod>2013-09-04T05:51:06+09:00</lastmod>
     </url>
     <url>
-        <loc>http://sharejoy.github.io/</loc>
+        <loc>http://blog.psysw.com//</loc>
         <lastmod>2013-09-04T05:51:06+09:00</lastmod>
     </url>
     <url>
-        <loc>http://sharejoy.github.io/robots.txt</loc>
+        <loc>http://blog.psysw.com//robots.txt</loc>
         <lastmod>2013-09-04T04:22:49+09:00</lastmod>
     </url>
 </urlset>

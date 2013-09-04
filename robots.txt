@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://sharejoy.github.io/sitemap.xml 
+Sitemap: http://blog.psysw.com//sitemap.xml 

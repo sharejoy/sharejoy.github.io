@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Octopress | Gate to the sharejoy's world]]></title>
-  <link href="http://sharejoy.github.io/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://sharejoy.github.io/"/>
-  <updated>2013-09-04T06:31:43+09:00</updated>
-  <id>http://sharejoy.github.io/</id>
+  <link href="http://blog.psysw.com//categories/octopress/atom.xml" rel="self"/>
+  <link href="http://blog.psysw.com//"/>
+  <updated>2013-09-04T12:28:55+09:00</updated>
+  <id>http://blog.psysw.com//</id>
   <author>
     <name><![CDATA[sharejoy]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress를 이용한 첫번째 Blogging]]></title>
-    <link href="http://sharejoy.github.io/2013/09/03/new-blog-with-octopress/"/>
+    <link href="http://blog.psysw.com//2013/09/03/new-blog-with-octopress/"/>
     <updated>2013-09-03T23:30:00+09:00</updated>
-    <id>http://sharejoy.github.io/2013/09/03/new-blog-with-octopress</id>
+    <id>http://blog.psysw.com//2013/09/03/new-blog-with-octopress</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a>는 <a href="https://www.ruby-lang.org/en/">Ruby</a>를 기반으로한 <a href="http://jekyllrb.com/">Jekyll</a> 을 이용해서 정적 블로그 사이트(Static site)를 만들어주는 툴입니다.</p>
 
 <p>로컬에서 모든 사이트를 html와 이미지로 다 생성을 한 다음에, 그걸 웹서버에 올리기만 하면 블로그가 생성된다.</p>
