@@ -103,42 +103,22 @@ Facebook : &hellip;">
 
 <aside class="sidebar">
   
-    
-<section>
-  <h1>About Me</h1>
-  <div id="twitter-profile" style="margin-top:0.5em;">
-    <p>
-      <strong>sharejoy</strong>
-      (<a href="http://twitter.com/i4r">@i4r</a>)
-    </p>
-    <p>sharejoy's programming blog for tips and tricks. It also has some other cool stuffs.</p>
-  </div>
-  <script type="text/javascript">
-    $(function(){
-        var container = $('#twitter-profile'),
-            user = "i4r";
-        
-        function parseTwLinks(s) {
-          var twUrl = "http://www.twitter.com/"
-          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
-              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
-          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
-              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
-          })
-          return s
-        }
+    <section>
+  <h1>About <strong>sharejoy</strong></h1>
+  <p>
+    SEYONG PARK likes software development, coding, learning cool stuffs, and talking about travel(including hotel membership, frequent flyer programs, and milage).<br>
+    He wants to share his knowledge, thoughts, and tips.
+  </p>
+</section>
 
-        $.ajax({
-            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
-          , type: 'GET'
-          , dataType: 'jsonp'
-          , error: function (err) { $('#twitter-profile').addClass('error'); }
-          , success: function(data) {
-              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
-            }
-        })
-      });
-  </script>
+<section>
+  <h1>Latest Tweets</h1>
+  
+    <a href="https://twitter.com/i4r" class="twitter-follow-button" data-show-count="false" data-lang="ko" data-size="large">Follow @i4r</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><br>
+  
+  <a class="twitter-timeline" width="260" height="400" href="https://twitter.com/i4r"  data-widget-id="377344313815887872">Tweets by @i4r</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </section>
 
 <section>
