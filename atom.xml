@@ -4,7 +4,7 @@
   <title><![CDATA[Gate to the sharejoy's world]]></title>
   <link href="http://blog.psysw.com//atom.xml" rel="self"/>
   <link href="http://blog.psysw.com//"/>
-  <updated>2013-09-10T17:22:23+09:00</updated>
+  <updated>2013-09-10T18:04:37+09:00</updated>
   <id>http://blog.psysw.com//</id>
   <author>
     <name><![CDATA[sharejoy]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Make twitter aside working]]></title>
+    <link href="http://blog.psysw.com//2013/09/10/make-twitter-aside-working/"/>
+    <updated>2013-09-10T17:32:00+09:00</updated>
+    <id>http://blog.psysw.com//2013/09/10/make-twitter-aside-working</id>
+    <content type="html"><![CDATA[<p><a href="http://octopress.org">Octopress</a>의 기본 classic theme에 들어있는 source/_includes/asides/twitter.html 은 예전 Twitter 1.0 API 기준이라서 현재는 동작을 하지 않습니다. 그걸 현재 트위터에서 권장하는 위젯 방식으로 바꾸면 정상적으로 동작을 하게 됩니다.</p>
+
+<p>참고 자료 : <a href="https://dev.twitter.com/docs/embedded-timelines">Embedded Timelines</a></p>
+
+<p>본인의 타임라인, 페이버릿 트윗들, 리스트 등을 블로그에 포함시키려면, 트위터에서 위젯을 생성해서 그걸 포함시켜야 합니다.</p>
+
+<!-- more -->
+
+
+<p>아래의 순서대로 따라하면 쉽게 생성할 수 있습니다.</p>
+
+<ol>
+<li><p>트위터 로그인 후에 <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a> 로 갑니다.</p></li>
+<li><p>위젯을 하나 아래처럼 생성합니다.</p>
+
+<p><img src="http://blog.psysw.com//images/20130910/twitter_widget.png" alt="트위터 위젯 생성" /></p></li>
+<li><p>위젯에서 생성된 코드를 가지고 source/_includes/asides/twitter.html 을 아래와 같이 수정합니다.
+이건 기존 twitter.html을 수정할 수도 있고, 하나를 custom/asides/twitter.html 로 복사해서 수정할 수도 있습니다.</p>
+
+<pre><code>
+&lt;section&gt;
+  &lt;h1&gt;Latest Tweets&lt;/h1&gt;
+
+    &lt;a href="https://twitter.com/i4r" class="twitter-follow-button" data-show-count="false" data-lang="ko" data-size="large"&gt;Follow @i4r&lt;/a&gt;
+    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;&lt;br&gt;
+
+  &lt;a class="twitter-timeline" width="260" height="400" href="https://twitter.com/i4r"  data-widget-id="YOUR-WIDGET-ID-HERE"&gt;Tweets by @i4r&lt;/a&gt;
+  &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;
+&lt;/section&gt;
+</code></pre></li>
+<li><p>수정된(또는 새론 만든) aside html을 사용하도록 _config.yml 을 수정합니다.</p>
+
+<pre><code>default_asides: [custom/asides/about.html, asides/twitter.html, asides/recent_posts.html, custom/asides/top_category_list.html]
+</code></pre></li>
+<li><p>rake generate 후에 rake deploy 를 하면 아래처럼 정상적인 twitter timeline을 볼 수 있습니다.</p>
+
+<p><img src="http://blog.psysw.com//images/20130910/twitter_aside.png" alt="트위터 타임라인" /></p></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lonely Planet eBook Maps(PDF)]]></title>
