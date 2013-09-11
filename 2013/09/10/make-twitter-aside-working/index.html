@@ -36,7 +36,7 @@
 
 <body    >
   
-    <header role="banner" class="bgimage"><hgroup>
+    <header role="banner"><hgroup>
   <h1><a href="/">Gate to the sharejoy's world</a></h1>
   
     <h2>프로그래밍 팁 + 사진 + 여행(마일리지) 등</h2>
@@ -98,7 +98,7 @@
 
 <div class="entry-content"><p><a href="http://octopress.org">Octopress</a>의 기본 classic theme에 들어있는 source/_includes/asides/twitter.html 은 예전 Twitter 1.0 API 기준이라서 현재는 동작을 하지 않습니다. 그걸 현재 트위터에서 권장하는 위젯 방식으로 바꾸면 정상적으로 동작을 하게 됩니다.</p>
 
-<p>참고 자료 : <a href="https://dev.twitter.com/docs/embedded-timelines">Embedded Timelines</a></p>
+<p>참고 자료 : <a href="http://dev.twitter.com/docs/embedded-timelines">Embedded Timelines</a></p>
 
 <p>본인의 타임라인, 페이버릿 트윗들, 리스트 등을 블로그에 포함시키려면, 트위터에서 위젯을 생성해서 그걸 포함시켜야 합니다.</p>
 
@@ -108,28 +108,66 @@
 <p>아래의 순서대로 따라하면 쉽게 생성할 수 있습니다.</p>
 
 <ol>
-<li><p>트위터 로그인 후에 <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a> 로 갑니다.</p></li>
+<li><p>트위터 로그인 후에 <a href="http://twitter.com/settings/widgets">http://twitter.com/settings/widgets</a> 로 갑니다.</p></li>
 <li><p>위젯을 하나 아래처럼 생성합니다.</p>
 
 <p><img src="/images/20130910/twitter_widget.png" alt="트위터 위젯 생성" /></p></li>
 <li><p>위젯에서 생성된 코드를 가지고 source/_includes/asides/twitter.html 을 아래와 같이 수정합니다.
 이건 기존 twitter.html을 수정할 수도 있고, 하나를 custom/asides/twitter.html 로 복사해서 수정할 수도 있습니다.</p>
 
-<pre><code>
-&lt;section&gt;
-  &lt;h1&gt;Latest Tweets&lt;/h1&gt;
-
-    &lt;a href="https://twitter.com/i4r" class="twitter-follow-button" data-show-count="false" data-lang="ko" data-size="large"&gt;Follow @i4r&lt;/a&gt;
-    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;&lt;br&gt;
-
-  &lt;a class="twitter-timeline" width="260" height="400" href="https://twitter.com/i4r"  data-widget-id="YOUR-WIDGET-ID-HERE"&gt;Tweets by @i4r&lt;/a&gt;
-  &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;
-&lt;/section&gt;
-</code></pre></li>
-<li><p>수정된(또는 새론 만든) aside html을 사용하도록 _config.yml 을 수정합니다.</p>
-
-<pre><code>default_asides: [custom/asides/about.html, asides/twitter.html, asides/recent_posts.html, custom/asides/top_category_list.html]
-</code></pre></li>
+<p><figure class='code'><figcaption><span> (twitter.html.diff)</span> <a href='/downloads/code/twitter.html.diff'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='diff'><span class='line'><span class="gu">@@ -1,19 +1,13 @@</span>
+</span><span class='line'> {% if site.twitter_user %}
+</span><span class='line'> &lt;section&gt;
+</span><span class='line'>   &lt;h1&gt;Latest Tweets&lt;/h1&gt;
+</span><span class='line'><span class="gd">&ndash;  &lt;ul id=&quot;tweets&quot;&gt;</span>
+</span><span class='line'><span class="gd">&ndash;    &lt;li class=&quot;loading&quot;&gt;Status updating&hellip;&lt;/li&gt;</span>
+</span><span class='line'><span class="gd">&ndash;  &lt;/ul&gt;</span>
+</span><span class='line'><span class="gd">&ndash;  &lt;script type=&quot;text/javascript&quot;&gt;</span>
+</span><span class='line'><span class="gd">&ndash;    $.domReady(function(){</span>
+</span><span class='line'><span class="gd">&ndash;      getTwitterFeed(&quot;{{site.twitter_user}}&quot;, {{site.twitter_tweet_count}}, {{site.twitter_show_replies}});</span>
+</span><span class='line'><span class="gd">&ndash;    });</span>
+</span><span class='line'><span class="gd">&ndash;  &lt;/script&gt;</span>
+</span><span class='line'><span class="gd">&ndash;  &lt;script src=&quot;{{ root_url }}/javascripts/twitter.js&quot; type=&quot;text/javascript&quot;&gt; &lt;/script&gt;</span>
+</span><span class='line'>   {% if site.twitter_follow_button %}
+</span><span class='line'><span class="gd">&ndash;    &lt;a href=&quot;<a href="http://twitter.com/">http://twitter.com/</a>{{ site.twitter_user }}&quot; class=&quot;twitter-follow-button&quot; data-show-count=&quot;{{ site.twitter_show_follower_count }}&quot;&gt;Follow @{{ site.twitter_user }}&lt;/a&gt;</span>
+</span><span class='line'><span class="gi">+    &lt;a href=&quot;<a href="https://twitter.com/">https://twitter.com/</a>{{site.twitter_user}}&quot; class=&quot;twitter-follow-button&quot; data-show-count=&quot;false&quot; data-lang=&quot;ko&quot; data-size=&quot;large&quot;&gt;Follow @{{site.twitter_user}}&lt;/a&gt;</span>
+</span><span class='line'><span class="gi">+    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&quot;<a href="http://platform.twitter.com/widgets.js&amp;quot;;fjs.parentNode.insertBefore">http://platform.twitter.com/widgets.js&amp;quot;;fjs.parentNode.insertBefore</a>(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;&lt;br&gt;</span>
+</span><span class='line'>   {% else %}
+</span><span class='line'><span class="gd">&ndash;    &lt;p&gt;Follow &lt;a href=&quot;<a href="http://twitter.com/">http://twitter.com/</a>{{site.twitter_user}}&quot;&gt;@{{ site.twitter_user }}&lt;/a&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="gi">+    &lt;p&gt;Follow &lt;a href=&quot;<a href="http://twitter.com/">http://twitter.com/</a>{{site.twitter_user}}&quot;&gt;@{{site.twitter_user}}&lt;/a&gt;&lt;/p&gt;</span>
+</span><span class='line'>   {% endif %}
+</span><span class='line'><span class="gi">+  &lt;a class=&quot;twitter-timeline&quot; width=&quot;260&quot; height=&quot;400&quot; href=&quot;<a href="https://twitter.com/">https://twitter.com/</a>{{site.twitter_user}}&quot;  data-widget-id=&quot;377344313815887872&quot;&gt;Tweets by @{{site.twitter_user}}&lt;/a&gt;</span>
+</span><span class='line'><span class="gi">+  &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^<a href="http:/.test">http:/.test</a>(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&quot;://platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;</span>
+</span><span class='line'> &lt;/section&gt;
+</span><span class='line'> {% endif %}
+</span></code></pre></td></tr></table></div></figure></p></li>
+<li><p>수정된(또는 새로 만든) asides/twitter.html을 사용하도록 _config.yml 을 수정합니다.</p></li>
 <li><p>rake generate 후에 rake deploy 를 하면 아래처럼 정상적인 twitter timeline을 볼 수 있습니다.</p>
 
 <p><img src="/images/20130910/twitter_aside.png" alt="트위터 타임라인" /></p></li>
